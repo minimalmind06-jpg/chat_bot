@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- Cabeçalho da aplicação -->
+        <header class="chat-header">
+            <div class="chat-header-info">
+                <h1 class="chat-title">✨ Chatbot</h1>
+                <span class="chat-status">Online</span>
+            </div>
+            <button id="newChatButton" class="new-chat-button" aria-label="Iniciar nova conversa">
+                +
+            </button>
+        </header>
+
+        <!-- Área onde as mensagens vão aparecer -->
+        <main id="chatMessages" class="chat-messages">
+            <!-- As mensagens serão inseridas aqui pelo JavaScript -->
+        </main>
+
+        <!-- Indicador "Bot está a escrever..." -->
+        <div id="typingIndicator" class="typing-indicator" hidden>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <!-- Área de escrita da mensagem -->
+        <footer class="chat-input-area">
+            <textarea
+                id="messageInput"
+                class="message-input"
+                placeholder="Escreve uma mensagem..."
+                rows="1"
+                aria-label="Escreve a tua mensagem"
+            ></textarea>
+
+            <button id="sendButton" class="send-button" aria-label="Enviar mensagem" disabled>
+                ↑
+            </button>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
