@@ -15,8 +15,12 @@ const responses = {
     greetings: "Olá! 👋 Como posso ajudar?",
     name: "Podes chamar-me Chatbot.",
     help: "Claro! Podes perguntar-me algumas coisas ou simplesmente conversar comigo.",
+    services: "Oferecemos serviços de gestão de redes sociais, SEO, criação de conteúdo e campanhas de publicidade online. 📈",
+    pricing: "Os nossos preços variam consoante o projeto. Entre em contacto para obter um orçamento personalizado! 💼",
+    results: "O tempo para ver resultados depende da estratégia, mas normalmente o SEO leva de 3 a 6 meses. As campanhas pagas podem trazer resultados imediatos. 🚀",
+    contact: "Pode contactar-nos através do email contacto@agencia.pt ou pelo telefone +351 123 456 789. 📞",
     goodbye: "Até à próxima! 👋",
-    unknown: "Ainda estou a aprender a responder a esse tipo de pergunta. 🙂"
+    unknown: "Ainda estou a aprender a responder a esse tipo de pergunta. 🙂 Tente perguntar sobre os nossos serviços, preços ou contactos!"
 };
 
 // ===========================
@@ -44,6 +48,22 @@ function getBotResponse(message) {
         const horas = agora.getHours().toString().padStart(2, "0");
         const minutos = agora.getMinutes().toString().padStart(2, "0");
         return `Agora são ${horas}:${minutos}. ⏰`;
+    }
+
+    if (text.includes("serviço") || text.includes("serviços") || text.includes("fazem") || text.includes("marketing")) {
+        return responses.services;
+    }
+
+    if (text.includes("preço") || text.includes("preços") || text.includes("custo") || text.includes("orçamento")) {
+        return responses.pricing;
+    }
+
+    if (text.includes("resultado") || text.includes("resultados") || text.includes("tempo") || text.includes("demora")) {
+        return responses.results;
+    }
+
+    if (text.includes("contacto") || text.includes("contactar") || text.includes("email") || text.includes("telefone")) {
+        return responses.contact;
     }
 
     if (text.includes("adeus") || text.includes("tchau")) {
